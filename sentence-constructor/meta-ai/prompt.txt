@@ -82,5 +82,3 @@ Effective example sentences illustrating grammar patterns.
 Engaging teacher guidance with reflective questions and student prompts.
 Adherence to special instructions by not providing a complete translation sentence.
 
-Student Input Sentence: 
-"Don't forget to turn off the oven after you're finished baking the sweet potatoes."
