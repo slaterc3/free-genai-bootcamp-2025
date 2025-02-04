@@ -1,4 +1,5 @@
 ## MetaAI-powered Assistant Guide
+Llama 3 - 70 billion parameters 
 ## prompting Guide
 https://www.llama.com/docs/how-to-guides/prompting/
 

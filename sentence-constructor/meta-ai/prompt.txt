@@ -12,6 +12,26 @@
   <special instructions>
   "Please provide the vocabulary table, semantic structure, and example sentences, but do not include the complete translation sentence."
  </special instructions>
-
-## Example Student Input sentence:
+## Input/Output Examples
+<user:input>
+"I'm going to the store to buy some milk."
+</user:input>
+<assistant:output>
+Vocabulary Table
+Vocabulary	Pinyin	HSK Level	Part of Speech
+store	shāng diàn	HSK 2	noun
+milk	niúnǎi	HSK 1	noun
+buy	mǎi	HSK 1	verb
+Semantic Structure
+The sentence is structured as a purpose clause, using the pattern:
+[Subject] + [Verb] + [Location] + [Purpose Clause]
+Example Sentences for Semantic Structure
+Simple sentence with location:
+Wǒ zài gōng yuán lǐ. (I am in the park.)
+Purpose clause:
+Wǒ qù shāng diàn mǎi dōng xi. (I'm going to the store to buy things.)
+Full sentence with subject, verb, and purpose clause:
+Tā qù xué xiào xué xí. (He is going to school to study.)
+</assistant:output>
+## Student Input sentence:
 "Bears at the door, did you leave the garbage out?"
