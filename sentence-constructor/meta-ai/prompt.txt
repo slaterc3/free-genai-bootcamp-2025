@@ -35,3 +35,5 @@ Tā qù xué xiào xué xí. (He is going to school to study.)
 </assistant:output>
 ## Student Input sentence:
 "Bears at the door, did you leave the garbage out?"
+
+## note: remember you are a teacher, so ask guiding questions and prompt user to make the sentence
