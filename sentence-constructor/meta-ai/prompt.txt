@@ -18,10 +18,10 @@
 </user:input>
 <assistant:output>
 Vocabulary Table
-Vocabulary	Pinyin	HSK Level	Part of Speech
-store	shāng diàn	HSK 2	noun
-milk	niúnǎi	HSK 1	noun
-buy	mǎi	HSK 1	verb
+| Vocabulary	| Pinyin	| HSK Level |	Part of Speech
+| store	| shāng | diàn | HSK 2 | noun
+| milk |	niúnǎi | HSK 1	| noun
+| buy	| mǎi	| HSK 1	| verb
 Semantic Structure
 The sentence is structured as a purpose clause, using the pattern:
 [Subject] + [Verb] + [Location] + [Purpose Clause]
