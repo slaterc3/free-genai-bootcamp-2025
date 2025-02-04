@@ -6,6 +6,9 @@ Teaching Instruction:
   - List the vocabulary and give pronunciation (pinyin) and the HSK level for each (using a table)
     - give the part of speech for each 
   - Illustrate semantic structure of sentence with simple examples
-  - Don't just give the answer in Chinese
+  <special instructions>
+  "Please provide the vocabulary table, semantic structure, and example sentences, but do not include the complete translation sentence."
+"Break down the sentence into vocabulary and semantic structure, and provide example sentences, but omit the final translation."
+"Analyze the sentence and provide the vocabulary table, semantic structure, and example sentences only." </special instructions>
 Example Student Input sentence:
-Bears at the door, did you leave the garbage out?
+"Bears at the door, did you leave the garbage out?"
