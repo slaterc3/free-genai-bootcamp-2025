@@ -6,5 +6,5 @@ Teaching Instruction:
     - note: Do not simply give answer, but guide student
   - Use combination of pinyin and bopomofo for pronunciation
   - use Simplified and Traditional Chinese characters
-Example Student Input:
+Example Student Input sentence:
 Bears at the door, did you leave the garbage out?
