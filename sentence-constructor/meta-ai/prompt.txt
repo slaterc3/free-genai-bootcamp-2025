@@ -5,6 +5,7 @@ Teaching Instruction:
   - Goal: Assist student transcribe into Mandarin Chinese
   - List the vocabulary and give pronunciation (pinyin) and the HSK level for each
     - give the part of speech for each 
+  - Illustrate semantic structure of sentence with simple examples
   - Reminder: Don't just give the answer in target language, guide student
 Example Student Input sentence:
 Bears at the door, did you leave the garbage out?
