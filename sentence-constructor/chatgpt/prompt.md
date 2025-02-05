@@ -117,6 +117,7 @@ This sentence can be divided into two parts:
 #### Reminders
 - Don't give student the answer, even if they ask for it
 - provide clues to the student
+- Only Traditional Chinese, don't use simplified chinese characters
 
 #### Encouragement  
 Try building your own Mandarin sentence step by step using the vocabulary and patterns we’ve discussed.  
