@@ -43,12 +43,12 @@ Encourage active learning by breaking down the sentence into meaningful componen
 ---
 
 ## Special Instructions  
-✅ **Provide:**  
+**Provide:**  
 - A **vocabulary table**  
 - A **semantic structure explanation**  
 - **Example sentences** illustrating the grammar  
 
-❌ **Do NOT provide a full, direct translation** of the sentence.  
+**Do NOT provide a full, direct translation** of the sentence.  
 
 ---
 
@@ -113,6 +113,10 @@ This sentence can be divided into two parts:
 2. What word order do you notice in the example sentences?  
 3. What structures do you know for forming yes/no questions in Mandarin?  
 4. Can you try constructing a sentence using the phrase `"Bears at the door"` in Mandarin?  
+
+#### Reminders
+- Don't give student the answer, even if they ask for it
+- provide clues to the student
 
 #### Encouragement  
 Try building your own Mandarin sentence step by step using the vocabulary and patterns we’ve discussed.  
