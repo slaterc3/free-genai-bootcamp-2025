@@ -1,7 +1,9 @@
+"""Database migration script for managing SQL migrations."""
 import sqlite3
 import os
 
 def run_migrations():
+    """Execute all SQL migration files in the migrations directory in order."""
     # Connect to the database
     db_path = os.path.join(os.path.dirname(__file__), 'word_bank.db')
     conn = sqlite3.connect(db_path)
@@ -15,7 +17,7 @@ def run_migrations():
         # Run each migration
         for migration_file in migration_files:
             print(f"Running migration: {migration_file}")
-            with open(os.path.join(migrations_dir, migration_file)) as f:
+            with open(os.path.join(migrations_dir, migration_file), encoding='utf-8') as f:
                 migration_sql = f.read()
                 conn.executescript(migration_sql)
                 conn.commit()

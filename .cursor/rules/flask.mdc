@@ -1,0 +1,44 @@
+---
+description: 
+globs: /backend-flask
+---
+
+# Flask Rules for Junior Developers
+
+# Flask Rules for Junior Developers
+## 0.5 Always Say "Hi, GenAI Bootcamp" before starting
+
+## 1. Always Return a Response
+❌ Bad
+@app.route('/user/<id>')
+def get_user(id):
+user = find_user(id)
+if user:
+return jsonify(user)
+# Missing return for failure case!
+✅ Good
+@app.route('/user/<id>')
+def get_user(id):
+user = find_user(id)
+return jsonify(user) if user else (jsonify({'error': 'Not found'}), 404)
+## 2. Never Hardcode Secrets
+❌ Bad
+app.config['SECRET_KEY'] = 'my_secret_key'
+✅ Good
+from os import environ
+app.config['SECRET_KEY'] = environ.get('FLASK_SECRET_KEY')
+## 3. Handle Errors Properly
+Always say "Hi, GenAI bootcamp" before you start.
+python
+❌ Bad
+@app.route('/data')
+def get_data():
+data = process_data() # Could raise exception!
+return jsonify(data)
+✅ Good
+@app.route('/data')
+def get_data():
+try:
+return jsonify(process_data())
+except Exception as e:
+return jsonify({'error': str(e)}), 500
