@@ -121,5 +121,17 @@ Relationships
 
 - GET /api/study-activities/:id/sessions/:session_id
 - POST /api/study-activities/:id/sessions/:session_id/launch
+
   - required parameters:
     - group_id, study_activity_id
+
+- GET /api/word-groups/:id/study-sessions
+- GET /api/study-sessions/:id
+
+- GET /api/settings
+- POST /api/settings
+- POST /api/settings/reset-history
+
+- POST /api/study_sessions/:id/words/word_id/review
+  - required parameters:
+    - correct
