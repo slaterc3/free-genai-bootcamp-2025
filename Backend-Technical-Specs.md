@@ -103,12 +103,23 @@ Relationships
 
 ### API Endpoints
 
-- GET /words
-- GET /words/:id
-- POST /words
-- PUT /words/:id
-- DELETE /words/:id
-- GET /dashboard/last_study_session
-- GET /dashboard/study_progress
-- GET /dashboard/quick_stats
-- POST /dashboard/start_study_session
+- GET /api/study-activities/:id
+- GET /api/study-activities/:id/sessions
+- GET /api/dashboard/last_study_session
+- GET /api/dashboard/study_progress
+
+- GET /api/words
+  - pagination with 100 items per page
+- GET /api/words/:id
+- GET /api/word-groups
+  - pagination with 10 items per page
+- GET /api/word-groups/:id
+- GET /api/word-groups/:id/words
+
+- GET /api/study-activities/:id
+- GET /api/study-activities/:id/study_sessions
+
+- GET /api/study-activities/:id/sessions/:session_id
+- POST /api/study-activities/:id/sessions/:session_id/launch
+  - required parameters:
+    - group_id, study_activity_id
