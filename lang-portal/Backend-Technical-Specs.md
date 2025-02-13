@@ -103,35 +103,264 @@ Relationships
 
 ### API Endpoints
 
-- GET /api/study-activities/:id
-- GET /api/study-activities/:id/sessions
-- GET /api/dashboard/last_study_session
-- GET /api/dashboard/study_progress
+#### GET /api/study-activities/:id
+
+Returns information about a study activity.
+
+```json
+{
+  "id": 1,
+  "group_id": 1,
+  "group_name": "Passive Sentences",
+  "name": "Flashcards",
+  "study_activity_id": 1,
+  "url": "https://flashcards.example.com",
+  "created_at": "2024-03-20T10:00:00Z"
+}
+```
+
+#### GET /api/study-activities/:id/sessions
+
+Returns all study sessions for a given study activity.
+
+```json
+{
+  "sessions": [
+    {
+      "id": 1,
+      "group_id": 123,
+      "study_activity_id": 1,
+      "created_at": "2024-03-20T10:00:00Z",
+      "correct_count": 15,
+      "total_reviews": 20
+    }
+  ]
+}
+```
+
+#### GET /api/dashboard/last_study_session
+
+Returns the last study session for the user.
+
+```json
+{
+  "session": {
+    "id": 1,
+    "group_id": 123,
+    "study_activity_id": 1,
+    "created_at": "2024-03-20T10:00:00Z",
+    "group_name": "Basic Vocabulary",
+    "activity_name": "Flashcards"
+  }
+}
+```
+
+#### GET /api/dashboard/study_progress
+
+Returns the study progress for the user.
+
+```json
+{
+  "daily_stats": [
+    {
+      "date": "2024-03-20",
+      "correct_count": 25,
+      "total_reviews": 30
+    }
+  ],
+  "total_words_studied": 150,
+  "average_accuracy": 0.85
+}
+```
 
 - GET /api/words
+
   - pagination with 100 items per page
+    ```json
+    {
+      "words": [
+        {
+          "id": 1,
+          "characters": "你好",
+          "pinyin": "nǐ hǎo",
+          "english": "hello",
+          "parts": {
+            "characters": ["你", "好"],
+            "pinyin": ["nǐ", "hǎo"]
+          }
+        }
+      ],
+      "pagination": {
+        "current_page": 1,
+        "total_pages": 10,
+        "total_items": 1000,
+        "items_per_page": 100
+      }
+    }
+    ```
+
+  ```
+
+  ```
+
 - GET /api/words/:id
+- GET /api/words/:id
+  ```json
+  {
+    "id": 1,
+    "characters": "你好",
+    "pinyin": "nǐ hǎo",
+    "english": "hello",
+    "parts": {
+      "characters": ["你", "好"],
+      "pinyin": ["nǐ", "hǎo"]
+    }
+  }
+  ```
 - GET /api/word-groups
+
   - pagination with 10 items per page
+
+  ```json
+  {
+    "groups": [
+      {
+        "id": 1,
+        "name": "Basic Vocabulary",
+        "words_count": 50
+      }
+    ],
+    "pagination": {
+      "current_page": 1,
+      "total_pages": 5,
+      "total_items": 50,
+      "items_per_page": 10
+    }
+  }
+  ```
+
 - GET /api/word-groups/:id
+  ```json
+  {
+    "id": 1,
+    "name": "Basic Vocabulary",
+    "words_count": 50
+  }
+  ```
 - GET /api/word-groups/:id/words
-
+  ```json
+  {
+    "group_id": 1,
+    "group_name": "Basic Vocabulary",
+    "words": [
+      {
+        "id": 1,
+        "characters": "你好",
+        "pinyin": "nǐ hǎo",
+        "english": "hello",
+        "parts": {
+          "characters": ["你", "好"],
+          "pinyin": ["nǐ", "hǎo"]
+        }
+      }
+    ]
+  }
+  ```
 - GET /api/study-activities/:id
-- GET /api/study-activities/:id/study_sessions
 
+- GET /api/study-activities/:id/study_sessions
+  ```json
+  {
+    "group_id": 1,
+    "sessions": [
+      {
+        "id": 1,
+        "study_activity_id": 1,
+        "activity_name": "Flashcards",
+        "created_at": "2024-03-20T10:00:00Z",
+        "correct_count": 15,
+        "total_reviews": 20
+      }
+    ]
+  }
+  ```
 - GET /api/study-activities/:id/sessions/:session_id
+  ```json
+  {
+    "session_id": 1,
+    "group_id": 123,
+    "study_activity_id": 1,
+    "created_at": "2024-03-20T10:00:00Z",
+    "reviews": [
+      {
+        "word_id": 1,
+        "correct": true,
+        "created_at": "2024-03-20T10:01:00Z"
+      }
+    ]
+  }
+  ```
 - POST /api/study-activities/:id/sessions/:session_id/launch
 
-  - required parameters:
-    - group_id, study_activity_id
+```json
+{
+  "session_id": 1,
+  "group_id": 123,
+  "study_activity_id": 1,
+  "redirect_url": "https://flashcards.example.com/session/1"
+}
+```
 
-- GET /api/word-groups/:id/study-sessions
-- GET /api/study-sessions/:id
+- required parameters:
+
+  - session_id, group_id, study_activity_id
+
+-
 
 - GET /api/settings
+
+```json
+{
+  "daily_goal": 50,
+  "preferred_activity_id": 1,
+  "notifications_enabled": true
+}
+```
+
 - POST /api/settings
+  ```json
+  {
+    "success": true,
+    "settings": {
+      "daily_goal": 50,
+      "preferred_activity_id": 1,
+      "notifications_enabled": true
+    }
+  }
+  ```
 - POST /api/settings/reset-history
+
+```json
+{
+  "success": true,
+  "reset_at": "2024-03-20T10:00:00Z"
+}
+```
 
 - POST /api/study_sessions/:id/words/word_id/review
   - required parameters:
     - correct
+  ```json
+  {
+    "success": true,
+    "review": {
+      "word_id": 1,
+      "correct": true,
+      "created_at": "2024-03-20T10:00:00Z"
+    },
+    "session_stats": {
+      "correct_count": 16,
+      "total_reviews": 21
+    }
+  }
+  ```

@@ -169,3 +169,102 @@ Purpose of this page is to show a list of all word groups in database.
 #### Need API endpoints
 
 - GET /api/word-groups
+
+### Word Group Display `/word-groups/:id`
+
+#### Purpose
+
+Purpose of this page is to show the details of a word group.
+
+#### Components
+
+- group name
+- words paginated list
+  - fields
+    - id
+    - word
+    - group name
+    - correct count
+    - wrong count
+- group statistics
+  - total correct
+  - total wrong
+- study sessions
+  - paginated list of study sessions
+
+#### Need API endpoints
+
+- GET /api/word-groups/:id
+- GET /api/word-groups/:id/words
+- GET /api/word-groups/:id/study-sessions
+
+### Study Sessions `/study-sessions`
+
+#### Purpose
+
+Purpose of this page is to show a list of all study sessions in database.
+
+#### Components
+
+- study session paginated list
+  - fields
+    - id
+    - name
+    - group name
+    - start time
+    - end time
+
+#### Need API endpoints
+
+- GET /api/study-sessions
+
+### Study Session Display `/study-sessions/:id`
+
+#### Purpose
+
+Purpose of this page is to show the details of a study session.
+
+#### Components
+
+- study session details
+  - activity name
+  - group name
+  - start time
+  - end time
+  - number of words reviewed
+- words reviewed
+  - paginated list of words reviewed
+    - fields
+      - word
+      - group name
+      - correct count
+      - wrong count
+
+#### Need API endpoints
+
+- GET /api/study-sessions/:id
+
+### Setting Page `/settings`
+
+#### Purpose
+
+Purpose of this page is to show the settings and let user configure.
+
+#### Components
+
+- theme (light, dark )
+- language (English, Chinese)
+- font size (small, medium, large)
+- font family (serif, sans-serif)
+- font weight (light, normal, bold)
+- font color (black, white)
+- reset history button
+- reload seed data
+  - will drop all tables and do a full reset
+  - will reload seed data from `data/seed.sql`
+
+#### Need API endpoints
+
+- GET /api/settings
+- POST /api/settings
+- POST /api/settings/reset-history
