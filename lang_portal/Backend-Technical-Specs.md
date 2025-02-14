@@ -31,7 +31,7 @@ _Note: This is a living document and will be updated as specifications evolve._
 # Technical Requirements
 
 - backend server will be built with Flask
-- database will be built with SQLite
+- database will be built with PostgreSQL
 - the API will be built with OpenAPI
 - API will return JSON data
 - AWS RDS will be used for database
@@ -45,6 +45,9 @@ _Note: This is a living document and will be updated as specifications evolve._
 - AWS Certificate Manager will be used for SSL/TLS certificates
 
 # Database Schema
+
+Our database will be built with PostgreSQL called `lang_portal.db` that will be in the root of the project folder of `backend_python`.
+We have the following tables:
 
 ## Tables
 
@@ -364,3 +367,48 @@ Returns the study progress for the user.
     }
   }
   ```
+
+## Invoke Tasks
+
+Invoke is a tool for running tasks in a project.
+Here are tasks for lang portal that we need to run:
+
+### Initialize Database
+
+This will initialize the postgres database called `lang_portal.db` in the root of the project folder of `backend_python`.
+
+```bash
+invoke init-db
+```
+
+### Migrate Database
+
+This will migrate the database to the latest version.
+Migrations are in the `lang_portal/migrations` folder.
+The file name should look like `V001__create_words_table.py`
+
+```bash
+invoke migrate-db
+```
+
+### Seed Data
+
+This task will import json files and transform them into the database tables.
+All seed files are in the `lang_portal/data/seed` folder.
+All seed files should be loaded in alphabetical order.
+we will have yaml files for seed files that will have the following format:
+
+```yaml
+- model: app.models.Word
+  data:
+    - characters: 你好
+      pinyin: nǐ hǎo
+      english: hello
+      parts:
+        characters: ["你", "好"]
+        pinyin: ["nǐ", "hǎo"]
+```
+
+```bash
+invoke seed-data
+```
