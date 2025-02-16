@@ -1,19 +1,22 @@
 from flask import jsonify, request
 from . import api
+from ..models.study_activity import StudyActivity
+from ..schemas.study_activity import study_activity_schema, study_activities_schema
 from ..services.study_service import StudyService
-from ..schemas.study_activity import StudyActivitySchema
 from ..schemas.study_session import StudySessionSchema
 
 study_service = StudyService()
-activity_schema = StudyActivitySchema()
-session_schema = StudySessionSchema()
 sessions_schema = StudySessionSchema(many=True)
+
+@api.route('/study-activities', methods=['GET'])
+def get_study_activities():
+    activities = StudyActivity.query.all()
+    return jsonify(study_activities_schema.dump(activities))
 
 @api.route('/study-activities/<int:id>', methods=['GET'])
 def get_study_activity(id):
-    """Get study activity details"""
-    activity = study_service.get_activity_by_id(id)
-    return jsonify(activity_schema.dump(activity))
+    activity = StudyActivity.query.get_or_404(id)
+    return jsonify(study_activity_schema.dump(activity))
 
 @api.route('/study-activities/<int:id>/sessions', methods=['GET'])
 def get_activity_sessions(id):
