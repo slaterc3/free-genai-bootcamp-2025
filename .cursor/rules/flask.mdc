@@ -1,6 +1,11 @@
 ---
 description: 
-globs: /backend-flask
+globs: 
+---
+---
+description: 
+globs: /backend-python
+
 ---
 
 # Flask Rules for Junior Developers
