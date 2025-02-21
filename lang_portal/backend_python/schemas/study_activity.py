@@ -9,3 +9,7 @@ class StudyActivitySchema(ma.SQLAlchemySchema):
     name = ma.auto_field()
     url = ma.auto_field()
     created_at = ma.auto_field() 
+
+# Create schema instances
+study_activity_schema = StudyActivitySchema()
+study_activities_schema = StudyActivitySchema(many=True) 

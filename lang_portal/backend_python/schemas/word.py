@@ -11,3 +11,7 @@ class WordSchema(ma.SQLAlchemySchema):
     english = ma.auto_field()
     parts = ma.auto_field()
     created_at = ma.auto_field() 
+
+# Create schema instances
+word_schema = WordSchema()
+words_schema = WordSchema(many=True) 

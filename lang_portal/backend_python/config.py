@@ -4,12 +4,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Config:
-    # Flask
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-key-please-change'
-    
-    # Database
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-        'postgresql://localhost/lang_portal'
+    """Base configuration."""
+    SECRET_KEY = os.environ.get('SECRET_KEY', 'dev')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # AWS Configuration
@@ -19,13 +16,17 @@ class Config:
     S3_BUCKET = os.environ.get('S3_BUCKET')
 
 class DevelopmentConfig(Config):
+    """Development configuration."""
     DEBUG = True
 
 class TestingConfig(Config):
+    """Testing configuration."""
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/lang_portal_test'
+    # Use the same database URL for testing
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
 class ProductionConfig(Config):
+    """Production configuration."""
     DEBUG = False
 
 config = {
