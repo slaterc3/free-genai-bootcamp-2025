@@ -13,6 +13,13 @@ services:
       https_proxy: ${https_proxy}
       LLM_MODEL_ID: ${LLM_MODEL_ID}
       host_ip: ${host_ip}
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+
+volumes:
+  ollama_data:
+    driver: local
 
 networks:
   default:
