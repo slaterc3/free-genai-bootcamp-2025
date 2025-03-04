@@ -80,7 +80,7 @@ This guide explains how to set up the Ollama LLM server component on AWS EC2.
    }'
    ```
 
-2. Test remotely (replace with your EC2 IP):
+2. Test remotely
    ```bash
    curl http://your-ec2-ip:8008/api/generate -d '{
      "model": "llama3.2:1b",
@@ -113,4 +113,4 @@ The setup includes a Docker volume `ollama_data` that persists model data betwee
 
 ## API Integration
 
-The Ollama server exposes an HTTP API endpoint at port 8008. Example Python integration:
+The Ollama server exposes endpoint at port 8008
